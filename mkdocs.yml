@@ -1,1 +1,16 @@
-site_name: My Docs
+site_name: https://ashtonjohns.github.io/JetejaDocs/
+theme: readthedocs
+
+nav:
+  - Home: index.md
+  - Overview:
+      - Description: description.md
+      - Requirements: requirements.md
+      - Parts List: parts_list.md
+  - Installation:
+      - Installation Instructions: installation.md
+      - Getting it Running: getting_it_running.md
+  - Development:
+      - Active Development: active_development.md
+      - Progress Log: progress_log.md
+  - Demos: demos.md
