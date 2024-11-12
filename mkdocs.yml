@@ -1,4 +1,5 @@
-site_name: https://ashtonjohns.github.io/JetejaDocs/
+site_name: Jeteja Autonomous Robot Documentation
+site_url: https://AshtonJohns.github.io/JetejaDocs
 theme: readthedocs
 
 nav:
