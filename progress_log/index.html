@@ -71,11 +71,29 @@
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Progress Log</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#pull-the-nvidia-docker-image-for-tensorflow-ml">Pull the NVIDIA Docker Image for TensorFlow + ML</a>
+    <li class="toctree-l2"><a class="reference internal" href="#jetson">Jetson</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-the-nvidia-docker-image-for-tensorflow-ml">Pull the NVIDIA Docker Image for TensorFlow + ML</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#run-the-docker-container">Run the Docker Container</a>
+    <li class="toctree-l3"><a class="reference internal" href="#run-the-docker-container">Run the Docker Container</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#run-the-docker-container-and-set-working-directory">Run the Docker Container and set working directory</a>
+    <li class="toctree-l3"><a class="reference internal" href="#run-the-docker-container-and-set-working-directory">Run the Docker Container and set working directory</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#my-workstation-amd5950x-nvidiartx3080">My workstation (amd5950X nvidiaRTX3080)</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#install-docker">Install Docker</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-nvidia-container-toolkit">Install NVIDIA Container Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#test-nvidia-toolkit">Test NVIDIA Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-tensorflow-docker-image">Pull TensorFlow Docker Image</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#correct-workspace">Correct workspace</a>
+    </li>
+        </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#possible-issue-fixes">Possible issue fixes</a>
         <ul>
@@ -131,6 +149,7 @@
             <div class="section">
               
                 <h1 id="using-tensorflow">Using tensorflow</h1>
+<h2 id="jetson">Jetson</h2>
 <h3 id="pull-the-nvidia-docker-image-for-tensorflow-ml">Pull the NVIDIA Docker Image for TensorFlow + ML</h3>
 <pre><code class="language-bash">docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
 </code></pre>
@@ -145,6 +164,34 @@
     -w /workspace \
     nvcr.io/nvidia/l4t-ml:r35.2.1-py3
 </code></pre>
+<h2 id="my-workstation-amd5950x-nvidiartx3080">My workstation (amd5950X nvidiaRTX3080)</h2>
+<h3 id="install-docker">Install Docker</h3>
+<pre><code class="language-bash">sudo apt update
+sudo apt install -y docker.io
+sudo systemctl enable docker
+sudo systemctl start docker
+</code></pre>
+<h3 id="install-nvidia-container-toolkit">Install NVIDIA Container Toolkit</h3>
+<pre><code class="language-bash">curl -s -L https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg
+distribution=$(. /etc/os-release; echo $ID$VERSION_ID)
+curl -s -L https://nvidia.github.io/libnvidia-container/$distribution/libnvidia-container.list | sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+sudo apt update
+sudo apt install -y nvidia-container-toolkit
+sudo systemctl restart docker
+</code></pre>
+<h3 id="test-nvidia-toolkit">Test NVIDIA Toolkit</h3>
+<pre><code class="language-bash">sudo docker run --rm --runtime=nvidia nvidia/cuda:12.2.0-base nvidia-smi
+</code></pre>
+<h3 id="pull-tensorflow-docker-image">Pull TensorFlow Docker Image</h3>
+<pre><code class="language-bash">sudo docker pull nvcr.io/nvidia/tensorflow:23.02-tf2-py3
+</code></pre>
+<h3 id="correct-workspace">Correct workspace</h3>
+<pre><code class="language-bash">sudo docker run --rm --runtime=nvidia -it \
+    --ipc=host --ulimit memlock=-1 --ulimit stack=67108864 \
+    -v ~/jeteja_robot:/workspace \
+    -w /workspace \
+    nvcr.io/nvidia/tensorflow:23.02-tf2-py3
+</code></pre>
 <h2 id="possible-issue-fixes">Possible issue fixes</h2>
 <h3 id="set-openmp-environment-variable">Set OpenMP Environment Variable</h3>
 <pre><code class="language-bash">export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
@@ -152,6 +199,10 @@
 <h3 id="enable-tensorflows-cuda_malloc_async-allocator">Enable TensorFlow’s cuda_malloc_async Allocator</h3>
 <pre><code class="language-bash">export TF_GPU_ALLOCATOR=cuda_malloc_async
 
+</code></pre>
+<h1 id="copying-from-jetson-to-powerful-computer">Copying from jetson to powerful computer</h1>
+<h2 id="rsync">Rsync</h2>
+<pre><code class="language-bash">rsync -avz [source-username]@[source-IP]:/path/to/source/ /path/to/destination/
 </code></pre>
               
             </div>
