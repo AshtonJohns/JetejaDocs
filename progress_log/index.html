@@ -70,6 +70,20 @@
                     <li class="toctree-l1"><a class="reference internal" href="../active_development/">Active Development</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Progress Log</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#pull-the-nvidia-docker-image-for-tensorflow-ml">Pull the NVIDIA Docker Image for TensorFlow + ML</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-the-docker-container">Run the Docker Container</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#run-the-docker-container-and-set-working-directory">Run the Docker Container and set working directory</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#possible-issue-fixes">Possible issue fixes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#set-openmp-environment-variable">Set OpenMP Environment Variable</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../updating_site/">Updating this Site</a>
                     </li>
@@ -114,7 +128,27 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="using-tensorflow">Using tensorflow</h1>
+<h3 id="pull-the-nvidia-docker-image-for-tensorflow-ml">Pull the NVIDIA Docker Image for TensorFlow + ML</h3>
+<pre><code class="language-bash">docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+</code></pre>
+<h3 id="run-the-docker-container">Run the Docker Container</h3>
+<pre><code class="language-bash">docker run --runtime nvidia -it --rm \
+    -v /path/to/your/ros/workspace:/workspace \
+    nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+</code></pre>
+<h3 id="run-the-docker-container-and-set-working-directory">Run the Docker Container and set working directory</h3>
+<pre><code class="language-bash">docker run --runtime nvidia -it --rm \
+    -v ~/jeteja_robot:/workspace \
+    -w /workspace \
+    nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+</code></pre>
+<h2 id="possible-issue-fixes">Possible issue fixes</h2>
+<h3 id="set-openmp-environment-variable">Set OpenMP Environment Variable</h3>
+<pre><code class="language-bash">export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+
+export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+</code></pre>
               
             </div>
           </div>
