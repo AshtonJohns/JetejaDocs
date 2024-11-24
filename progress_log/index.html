@@ -83,6 +83,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enable-tensorflows-cuda_malloc_async-allocator">Enable TensorFlow’s cuda_malloc_async Allocator</a>
+    </li>
     </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../updating_site/">Updating this Site</a>
@@ -146,8 +148,10 @@
 <h2 id="possible-issue-fixes">Possible issue fixes</h2>
 <h3 id="set-openmp-environment-variable">Set OpenMP Environment Variable</h3>
 <pre><code class="language-bash">export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+</code></pre>
+<h2 id="enable-tensorflows-cuda_malloc_async-allocator">Enable TensorFlow’s cuda_malloc_async Allocator</h2>
+<pre><code class="language-bash">export TF_GPU_ALLOCATOR=cuda_malloc_async
 
-export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
 </code></pre>
               
             </div>
