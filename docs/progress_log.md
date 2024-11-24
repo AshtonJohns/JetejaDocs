@@ -24,8 +24,13 @@ docker run --runtime nvidia -it --rm \
 ### Set OpenMP Environment Variable
 ```bash
 export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+```
 
-export LD_PRELOAD=/usr/lib/aarch64-linux-gnu/libgomp.so.1
+## Enable TensorFlow’s cuda_malloc_async Allocator
+
+```bash
+export TF_GPU_ALLOCATOR=cuda_malloc_async
+
 ```
 
 
