@@ -6,7 +6,6 @@
 
 * in root of github repository, execute
 ```bash
-mkdocs build
 mkdocs gh-deploy
 ```
 # Updating .md files
