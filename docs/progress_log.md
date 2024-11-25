@@ -1,24 +1,58 @@
 # Using tensorflow
 
-### Pull the NVIDIA Docker Image for TensorFlow + ML
+## Workstation (Ubuntu 20.04, 5950X, rtx3080)
+
+### Install CUDA Toolkit
+https://developer.nvidia.com/cuda-downloads
+
+These were my options: 
+* Operating System: Linux
+* Architecture: x86_64
+* Distribution: Ubuntu 20.04
+* Version: Latest (e.g., CUDA 12.0)
+
+### Add CUDA paths
 ```bash
-docker pull nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-### Run the Docker Container
+### Verify installation
 ```bash
-docker run --runtime nvidia -it --rm \
-    -v /path/to/your/ros/workspace:/workspace \
-    nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+nvcc --version
 ```
 
-### Run the Docker Container and set working directory
+## Install cuDNN
+https://developer.nvidia.com/cudnn
+
+Verify your options
+
+## Training and optimizing
+
+### Install requirements.txt
 ```bash
-docker run --runtime nvidia -it --rm \
-    -v ~/jeteja_robot:/workspace \
-    -w /workspace \
-    nvcr.io/nvidia/l4t-ml:r35.2.1-py3
+cd ~/jeteja_robot
+pip install -r requirements.txt
 ```
+
+### Install python virtual environment
+```bash
+sudo apt install -y python3-venv
+```
+
+### Create the virtual environment
+```bash
+python3 -m venv tf-gpu
+source tf-gpu/bin/activate
+```
+
+### Verify TensorFlow and GPU support
+```bash
+python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+```
+
+
 
 ## Possible issue fixes
 ### Set OpenMP Environment Variable
@@ -34,3 +68,10 @@ export TF_GPU_ALLOCATOR=cuda_malloc_async
 ```
 
 
+# Copying from jetson to powerful computer
+
+## Rsync
+
+```bash
+rsync -avz [source-username]@[source-IP]:/path/to/source/ /path/to/destination/
+```
