@@ -52,7 +52,10 @@ source tf-gpu/bin/activate
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
+## Jetson Orin Nano (Jetpack 5.1.3)
 
+## Install tensorflow 
+[https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html)
 
 ## Possible issue fixes
 ### Set OpenMP Environment Variable
