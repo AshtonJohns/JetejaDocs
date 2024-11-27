@@ -52,10 +52,22 @@ source tf-gpu/bin/activate
 python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
 ```
 
-## Jetson Orin Nano (Jetpack 5.1.3)
+## Jetson Orin Nano (Jetpack 6.1)
 
 ## Install tensorflow 
 [https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html)
+
+or for jp 6.1, 
+```bash
+sudo pip3 install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v61 tensorflow==2.16.1+nv24.08
+```
+
+You might need to downgrade your numpy. 
+
+To test, run the following for GPU support: 
+```bash
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices())"
+```
 
 ## Possible issue fixes
 ### Set OpenMP Environment Variable
