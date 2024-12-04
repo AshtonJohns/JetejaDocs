@@ -1,174 +1,321 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://AshtonJohns.github.io/JetejaDocs/installation/" />
-      <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>Installation Instructions - Jeteja Autonomous Robot Documentation</title>
-    <link rel="stylesheet" href="../css/theme.css" />
-    <link rel="stylesheet" href="../css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Installation Instructions";
-        var mkdocs_page_input_path = "installation.md";
-        var mkdocs_page_url = "/JetejaDocs/installation/";
-      </script>
-    
-    <!--[if lt IE 9]>
-      <script src="../js/html5shiv.min.js"></script>
-    <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-      <script>hljs.highlightAll();</script> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://AshtonJohns.github.io/JetejaDocs/installation/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Installation Instructions - Jeteja Autonomous Robot Documentation</title>
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Installation Instructions";
+    var mkdocs_page_input_path = "installation.md";
+    var mkdocs_page_url = "/JetejaDocs/installation/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
 </head>
 
 <body class="wy-body-for-nav" role="document">
 
   <div class="wy-grid-for-nav">
+
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
     <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-          <a href=".." class="icon icon-home"> Jeteja Autonomous Robot Documentation
-        </a><div role="search">
+        <a href=".." class="icon icon-home"> Jeteja Autonomous Robot Documentation</a>
+        <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Overview</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../description/">Description</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../parts_list/">Parts List</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Installation</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Installation Instructions</a>
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Overview</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../description/">Description</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../requirements/">Requirements</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../parts_list/">Parts List</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Installation</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Installation Instructions</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#required-software">Required Software</a>
+    <li class="toctree-l2"><a class="reference internal" href="#my-setup">My Setup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#powerful-computer">Powerful computer</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#building-the-workspace">Building the Workspace</a>
+    <li class="toctree-l3"><a class="reference internal" href="#nvidia-jetson">NVidia Jetson</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#simplify-access-for-future-sessions">Simplify Access for Future Sessions</a>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#powerful-computer-for-machine-learning">Powerful Computer for Machine Learning</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ros-2-humble">ROS 2 Humble</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#librealsense2">librealsense2</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#realsense2_camera-ros-2-package">realsense2_camera ROS 2 package</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#rplidar-ros-2-package">rplidar ROS 2 package</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#teleop_twist_joy-package">teleop_twist_joy package</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#requirementstxt">requirements.txt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-cuda-toolkit">Install CUDA Toolkit</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#add-cuda-paths">Add CUDA paths</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#verify-installation">Verify installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#install-cudnn">Install cuDNN</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-tensorflow">Installing Tensorflow</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#install-python-virtual-environment">Install python virtual environment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#create-the-virtual-environment">Create the virtual environment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sourcing-tensorflow-with-virtual-environment">Sourcing Tensorflow with virtual environment</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#verify-tensorflow-and-gpu-support">Verify TensorFlow and GPU support</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nvidia-jetson_1">NVidia Jetson</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#flashing-jetpack">FLASHING JETPACK</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ros2-and-librealsense2-setup">ROS2 and librealsense2 Setup</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#building-the-workspace">Building the Workspace</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#installing-tensorflow_1">Installing Tensorflow</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tensorflow-218">Tensorflow 2.18</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#test-tensorflow">Test Tensorflow</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sourcing-the-workspace">Sourcing the workspace</a>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../getting_it_running/">Getting it Running</a>
-                  </li>
-              </ul>
-              <p class="caption"><span class="caption-text">Development</span></p>
-              <ul>
-                  <li class="toctree-l1"><a class="reference internal" href="../active_development/">Active Development</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../progress_log/">Progress Log</a>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../updating_site/">Updating this Site</a>
-                  </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../demos/">Demos</a>
-                </li>
-              </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../getting_it_running/">Getting it Running</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Development</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../active_development/">Active Development</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../progress_log/">Progress Log</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../updating_site/">Updating this Site</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../demos/">Demos</a>
+                    </li>
+                </ul>
       </div>
     </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="..">Jeteja Autonomous Robot Documentation</a>
-        
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Jeteja Autonomous Robot Documentation</a>
       </nav>
+
+      
       <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-          <li class="breadcrumb-item">Installation</li>
-      <li class="breadcrumb-item active">Installation Instructions</li>
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Installation &raquo;</li>
+        
+      
+    
+    <li>Installation Instructions</li>
     <li class="wy-breadcrumbs-aside">
+      
     </li>
   </ul>
+  
   <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
+          <div role="main">
+            <div class="section">
               
                 <h1 id="installation-guide">Installation Guide</h1>
 <p>This guide will help you set up the project on your system.</p>
 <hr />
-<h2 id="required-software">Required Software</h2>
-<p>Ensure the following software is installed before proceeding:</p>
+<h2 id="my-setup">My Setup</h2>
+<h3 id="powerful-computer">Powerful computer</h3>
 <ul>
-<li><strong>ROS 2 Humble</strong></li>
-<li><strong>realsense2_camera</strong> ROS 2 package</li>
+<li>5950X CPU </li>
+<li>RTX 3080 GPU</li>
+<li>Ubuntu 22.04</li>
 </ul>
+<h3 id="nvidia-jetson">NVidia Jetson</h3>
+<ul>
+<li>Jetson Orin Nano Developer Kit with JetPack 6.1</li>
+<li>Ubuntu 22.04</li>
+</ul>
+<hr />
+<h2 id="powerful-computer-for-machine-learning">Powerful Computer for Machine Learning</h2>
+<h3 id="ros-2-humble">ROS 2 Humble</h3>
+<p>https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html</p>
+<p>And make sure that you have the common extensions by: </p>
+<pre><code class="language-bash">sudo apt install python3-colcon-common-extensions
+</code></pre>
+<h3 id="librealsense2">librealsense2</h3>
+<p>Follow the documentation at: </p>
+<p>https://github.com/IntelRealSense/librealsense/blob/master/doc/installation.md</p>
+<h3 id="realsense2_camera-ros-2-package">realsense2_camera ROS 2 package</h3>
 <pre><code class="language-bash">sudo apt install ros-humble-realsense2-camera
 </code></pre>
-<ul>
-<li><strong>rplidar</strong> ros2 package</li>
-</ul>
+<h3 id="rplidar-ros-2-package">rplidar ROS 2 package</h3>
 <pre><code class="language-bash">sudo apt install ros-humble-rplidar
 </code></pre>
-<ul>
-<li><strong>teleop_twist_joy</strong> package</li>
-</ul>
+<h3 id="teleop_twist_joy-package">teleop_twist_joy package</h3>
 <pre><code class="language-bash">sudo apt install ros-humble-teleop_twist_joy
 </code></pre>
+<h3 id="requirementstxt">requirements.txt</h3>
+<p>These are selective things to install that are required, but you might already have. You may pick any of the items and run a</p>
+<pre><code class="language-bash">pip install &lt;module&gt;
+</code></pre>
+<h3 id="install-cuda-toolkit">Install CUDA Toolkit</h3>
+<p>Install using the official documentation: </p>
+<p>https://developer.nvidia.com/cuda-downloads</p>
+<p>These were my options: 
+* Operating System: Linux</p>
 <ul>
-<li><strong>mpremote</strong> </li>
+<li>
+<p>Architecture: x86_64</p>
+</li>
+<li>
+<p>Distribution: Ubuntu 20.04</p>
+</li>
+<li>
+<p>Version: Latest (e.g., CUDA 12.0)</p>
+</li>
 </ul>
-<pre><code class="language-bash">pip install mpremote
+<h3 id="add-cuda-paths">Add CUDA paths</h3>
+<pre><code class="language-bash">echo 'export PATH=/usr/local/cuda/bin:$PATH' &gt;&gt; ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<h3 id="verify-installation">Verify installation</h3>
+<pre><code class="language-bash">nvcc --version
+</code></pre>
+<h3 id="install-cudnn">Install cuDNN</h3>
+<p>https://developer.nvidia.com/cudnn</p>
+<p>Verify your options.</p>
+<h3 id="installing-tensorflow">Installing Tensorflow</h3>
+<p>The highest JetPack 6.1 will allow is tensorflow 2.18. It's recommended to keep the same version on both computers. The <code>requirements.txt</code> file found within the root of the workspace includes tensorflow and other needed installs. </p>
+<h4 id="install-python-virtual-environment">Install python virtual environment</h4>
+<pre><code class="language-bash">sudo apt install -y python3-venv
+</code></pre>
+<h4 id="create-the-virtual-environment">Create the virtual environment</h4>
+<pre><code class="language-bash">mkdir ~/tf_env
+cd ~/tf_env
+python3 -m venv tf-gpu
+</code></pre>
+<h4 id="sourcing-tensorflow-with-virtual-environment">Sourcing Tensorflow with virtual environment</h4>
+<p>If you have a virtual environment creates, then either add </p>
+<pre><code class="language-bash">source ~/tf_env/tf-gpu/bin/activate
+</code></pre>
+<p>to your <code>~/.bashrc</code> file or source it when spawning a new terminal.</p>
+<h4 id="verify-tensorflow-and-gpu-support">Verify TensorFlow and GPU support</h4>
+<pre><code class="language-bash">python -c &quot;import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))&quot;
 </code></pre>
 <hr />
-<h2 id="building-the-workspace">Building the Workspace</h2>
-<ol>
-<li><strong>Open a terminal</strong> and navigate to your workspace directory:</li>
-</ol>
-<pre><code class="language-bash">cd ~/jeteja_ws
+<h2 id="nvidia-jetson_1">NVidia Jetson</h2>
+<h3 id="flashing-jetpack">FLASHING JETPACK</h3>
+<p>TODO</p>
+<h3 id="ros2-and-librealsense2-setup">ROS2 and librealsense2 Setup</h3>
+<p>This should follow the same procedure for the powerful computer above.</p>
+<h3 id="building-the-workspace">Building the Workspace</h3>
+<p>This should follow the same procedure for the powerful computer above.</p>
+<h3 id="installing-tensorflow_1">Installing Tensorflow</h3>
+<p><a href="https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html">https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html</a></p>
+<h4 id="tensorflow-218">Tensorflow 2.18</h4>
+<p>This is the most up to date version for Jetpack 6.1.</p>
+<pre><code class="language-bash">sudo pip3 install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v61 tensorflow==2.16.1+nv24.08
 </code></pre>
-<ol>
-<li><strong>Clone the repository</strong> to your workspace directory:</li>
-</ol>
-<pre><code class="language-bash">git clone https://github.com/AshtonJohns/UCAJetson.git
+<p>You might need to downgrade your numpy. </p>
+<h4 id="test-tensorflow">Test Tensorflow</h4>
+<p>To test, run the following for GPU support: </p>
+<pre><code class="language-bash">python3 -c &quot;import tensorflow as tf; print(tf.config.list_physical_devices())&quot;
 </code></pre>
-<ol>
-<li><strong>Build the project</strong>:</li>
-</ol>
-<pre><code class="language-bash">colcon build
+<hr />
+<h2 id="sourcing-the-workspace">Sourcing the workspace</h2>
+<p>To automatically source your workspace setup each time you open a terminal, add the following lines to your <code>~/.bashrc</code> file:</p>
+<pre><code class="language-bash">source ~/jeteja_ws/install/setup.bash
 </code></pre>
-<h2 id="simplify-access-for-future-sessions">Simplify Access for Future Sessions</h2>
-<p>To automatically source your workspace setup each time you open a terminal, add the following lines to your <code>~/.bashrc file</code>:</p>
-<pre><code class="language-bash">source ~/jeteja_ws/install/setup.py
-source /opt/ros/humble/install/setup.py
+<p>and if you did not when installing ros2 humble, source it by </p>
+<pre><code class="language-bash">source /opt/ros/humble/install/setup.bash
 </code></pre>
+<hr />
               
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../parts_list/" class="btn btn-neutral float-left" title="Parts List"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
         <a href="../getting_it_running/" class="btn btn-neutral float-right" title="Getting it Running">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../parts_list/" class="btn btn-neutral" title="Parts List"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
     </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <!-- Copyright etc -->
+    
   </div>
 
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-          
+      
         </div>
       </div>
 
@@ -176,26 +323,24 @@ source /opt/ros/humble/install/setup.py
 
   </div>
 
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="../parts_list/" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../getting_it_running/" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../parts_list/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../getting_it_running/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
 </div>
-    <script src="../js/jquery-3.6.0.min.js"></script>
-    <script>var base_url = "..";</script>
-    <script src="../js/theme_extra.js"></script>
-    <script src="../js/theme.js"></script>
-      <script src="../search/main.js"></script>
-    <script>
-        jQuery(function () {
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
             SphinxRtdTheme.Navigation.enable(true);
-        });
+        };
     </script>
 
 </body>
