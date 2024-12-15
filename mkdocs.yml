@@ -9,6 +9,8 @@ nav:
       - Requirements: requirements.md
       - Parts List: parts_list.md
       - Mechanical Design Deliverables: mechanical_design.md
+      - Circuit Flow Diagrams: circuit_flow_diagrams.md
+      - Power Flow Diagrams: power_system_diagrams.md
   - Installation:
       - Installation Instructions: installation.md
       - Getting it Running: getting_it_running.md

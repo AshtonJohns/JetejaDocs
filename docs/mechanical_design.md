@@ -1,4 +1,4 @@
-# Mechanical Designs
+# Mechanical Designs Revision History
 
 Here are the mechanical designs for Jeteja robot.
 
