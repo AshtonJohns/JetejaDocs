@@ -8,6 +8,7 @@ nav:
       - Description: description.md
       - Requirements: requirements.md
       - Parts List: parts_list.md
+      - Mechanical Design Deliverables: mechanical_design.md
   - Installation:
       - Installation Instructions: installation.md
       - Getting it Running: getting_it_running.md
